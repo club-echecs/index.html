@@ -37,7 +37,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 35px 25px;
+            padding: 25px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
         }
         .card:hover {
@@ -52,17 +52,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-        .logo-box::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background: radial-gradient(circle, transparent 55%, #2b2b2b 95%);
+            border-radius: 10px;
+            background: radial-gradient(circle, #ffffff 75%, #2b2b2b 95%);
         }
         .logo-box img {
-            width: 87.5%; 
+            max-width: 100%;
             max-height: 100%;
             object-fit: contain;
             display: block;
@@ -137,7 +131,7 @@
             <div class="logo-box"><img src="google.png" alt="Google"></div>
         </a>
         
-        <!-- Tuile FFE avec menu déroulant stable et liens officiels -->
+        <!-- Tuile FFE -->
         <div class="card ffe-card">
             <a href="https://www.echecs.asso.fr" target="_blank" style="text-decoration:none; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
                 <div class="logo-box"><img src="FFE echecs.jpg" alt="FFE"></div>
