@@ -6,7 +6,7 @@
     <style>
         * { box-sizing: border-box; }
         body { 
-            background: #111111; /* Fond de page gris très foncé */
+            background: #111111; 
             color: #ffffff; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             text-align: center; 
@@ -27,11 +27,11 @@
             margin: 0 auto;
         }
         .card {
-            background: #2b2b2b; /* Fond des tuiles gris moyen */
+            background: #2b2b2b; 
             border: 3px solid #3d3d3d;
             border-radius: 18px;
             text-decoration: none;
-            overflow: visible; /* Nécessaire pour afficher le menu déroulant au survol */
+            overflow: visible; 
             position: relative;
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             display: flex;
@@ -48,28 +48,43 @@
         .logo-box {
             width: 100%;
             height: 110px;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+        }
+        .logo-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle, transparent 55%, #2b2b2b 95%);
         }
         .logo-box img {
-            max-width: 100%;
+            width: 87.5%; 
             max-height: 100%;
             object-fit: contain;
             display: block;
         }
-        
-        /* Style du menu déroulant au survol sur la tuile FFE */
         .ffe-card {
             position: relative;
         }
-        .submenu {
-            display: none;
+        .ffe-card::after {
+            content: '';
             position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
-            background: #222222;
+            height: 20px;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            width: 100%;
+            background: #2b2b2b;
             border: 2px solid #8ab359;
             border-radius: 12px;
             flex-direction: column;
@@ -77,14 +92,14 @@
             padding: 12px;
             z-index: 100;
             box-shadow: 0 10px 25px rgba(0,0,0,0.8);
-            margin-top: 10px;
         }
-        .ffe-card:hover .submenu {
+        .ffe-card:hover .submenu,
+        .submenu:hover {
             display: flex;
         }
         .submenu a {
             color: #ffffff;
-            background: #333333;
+            background: #383838;
             padding: 8px;
             border-radius: 6px;
             text-decoration: none;
@@ -113,26 +128,28 @@
         <a class="card" href="https://blitztactics.com" target="_blank">
             <div class="logo-box"><img src="blitztactics.png" alt="BlitzTactics"></div>
         </a>
-        
-        <!-- Tuile FFE avec sous-menu interactif au survol -->
-        <div class="card ffe-card">
-            <a href="ffe.html" target="_blank" style="text-decoration:none; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
-                <div class="logo-box"><img src="FFE echecs.jpg" alt="FFE"></div>
-            </a>
-            <div class="submenu">
-                <a href="ffe.html" target="_blank">Résultats Équipes</a>
-                <a href="ffe.html" target="_blank">Interclubs Jeunes</a>
-                <a href="ffe.html" target="_blank">Classements</a>
-            </div>
-        </div>
+        <a class="card" href="https://lidraughts.org" target="_blank">
+            <div class="logo-box"><img src="lidraughts.jpg" alt="Lidraughts"></div>
+        </a>
 
         <!-- Ligne 2 -->
         <a class="card" href="https://www.google.com" target="_blank">
             <div class="logo-box"><img src="google.png" alt="Google"></div>
         </a>
-        <a class="card" href="https://lidraughts.org" target="_blank">
-            <div class="logo-box"><img src="lidraughts.jpg" alt="Lidraughts"></div>
-        </a>
+        
+        <!-- Tuile FFE avec menu déroulant stable et liens officiels -->
+        <div class="card ffe-card">
+            <a href="https://www.echecs.asso.fr" target="_blank" style="text-decoration:none; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                <div class="logo-box"><img src="FFE echecs.jpg" alt="FFE"></div>
+            </a>
+            <div class="submenu">
+                <a href="https://www.echecs.asso.fr/Equipes.aspx?Groupe=890" target="_blank">Résultats N4</a>
+                <a href="https://www.echecs.asso.fr/Equipes.aspx?Groupe=1224" target="_blank">Résultats N6</a>
+                <a href="https://www.echecs.asso.fr/ListeJoueurs.aspx?Action=JOUEURCLUBREF&JrTri=Elo&ClubRef=3328" target="_blank">Liste des licenciés de Vaison</a>
+                <a href="https://www.echecs.asso.fr/ListeTournois.aspx?Action=TOURNOICOMITE&ComiteRef=84" target="_blank">Tournois 84</a>
+            </div>
+        </div>
+
         <a class="card" href="https://vaison-echecs.fr" target="_blank">
             <div class="logo-box"><img src="site club.jpg" alt="Vaison Échecs"></div>
         </a>
