@@ -11,74 +11,51 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             text-align: center; 
             margin: 0;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
         h1 { 
-            margin-bottom: 40px; 
-            font-size: 36px;
+            margin-bottom: 50px; 
+            font-size: 45px;
             letter-spacing: 1px;
             color: #e4e2dd;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 38px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         .card {
-            background: #262421;
-            border: 2px solid #363431;
-            border-radius: 14px;
+            background: #ffffff;
+            border: 3px solid #dcd6cd;
+            border-radius: 18px;
             text-decoration: none;
-            color: #ffffff;
             overflow: hidden;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 20px;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #8ab359;
-            background: #2f2d2a;
-        }
-        .logo-box {
-            width: 80px;
-            height: 80px;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
         }
-        /* Images standard */
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #8ab359;
+            box-shadow: 0 10px 25px rgba(138, 179, 89, 0.4);
+        }
+        .logo-box {
+            width: 100%;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .logo-box img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
             display: block;
-        }
-        /* Image Chess.com agrandie x2 */
-        .logo-box img.chesscom-img {
-            transform: scale(2);
-        }
-        /* Image FFE agrandie x1.3 */
-        .logo-box img.ffe-img {
-            transform: scale(1.3);
-        }
-        /* Image BlitzTactics agrandie x2.5 */
-        .logo-box img.blitztactics-img {
-            transform: scale(2.5);
-        }
-        .logo-box svg {
-            width: 100%;
-            height: 100%;
-        }
-        .card span {
-            font-size: 20px;
-            font-weight: 600;
-            color: #f0f0f0;
         }
     </style>
 </head>
@@ -87,49 +64,32 @@
     <h1>Kiosque du Club d'Échecs - Vaison</h1>
 
     <div class="grid">
-        <!-- Lichess -->
+        <!-- Ligne 1 -->
         <a class="card" href="https://lichess.org" target="_blank">
-            <div class="logo-box">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1GaSQtwu1FSn9Llyw0MVOkRrJgzBsvpvfX2iSMNu8g&s=10" alt="Lichess">
-            </div>
-            <span>Lichess</span>
+            <div class="logo-box"><img src="lichess.png" alt="Lichess"></div>
         </a>
-
-        <!-- Chess.com -->
         <a class="card" href="https://www.chess.com" target="_blank">
-            <div class="logo-box">
-                <img src="https://i.redd.it/nwyhgmsa93zd1.png" alt="Chess.com" class="chesscom-img">
-            </div>
-            <span>Chess.com</span>
+            <div class="logo-box"><img src="chesscom.png" alt="Chess.com"></div>
+        </a>
+        <a class="card" href="https://blitztactics.com" target="_blank">
+            <div class="logo-box"><img src="blitztactics.png" alt="BlitzTactics"></div>
+        </a>
+        <a class="card" href="ffe.html" target="_blank">
+            <div class="logo-box"><img src="FFE echecs.jpg" alt="FFE"></div>
         </a>
 
-        <!-- FFE Échecs -->
-        <a class="card" href="https://www.echecs.asso.fr" target="_blank">
-            <div class="logo-box">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ0KFfKutgDhPWp4zuU4MRgTgrwbCx-QE0li2-P5YO_w&s=10" alt="FFE" class="ffe-img">
-            </div>
-            <span>FFE Échecs</span>
-        </a>
-
-        <!-- BlitzTactics -->
-        <a class="card" href="https://blitztactics.com/level-1" target="_blank">
-            <div class="logo-box">
-                <img src="data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAQBQCdASocABwAPtEutFooIagoGAEAGglsAHjPjGDfACI5vVHPjvIAwwTT2xyieXAAAP70IdU+1WVevLYOiNvCcL0tjIh3xfGQkNlJbCU6RESGax6F73V9Ph/vaq3kVpvjwBw469rTKj22RDhdO8SdCU3MEd9H82cYYjTcd1VQaSfq6zzy+9F/PBwF6eqmFtmv/q51Lp9NF78B0XPu9v+P9+/VLz8VOwUjiYZTRaIinS5xyMncgWMwAAA=" alt="BlitzTactics" class="blitztactics-img">
-            </div>
-            <span>BlitzTactics</span>
-        </a>
-
-        <!-- Google -->
+        <!-- Ligne 2 -->
         <a class="card" href="https://www.google.com" target="_blank">
-            <div class="logo-box">
-                <svg viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
-                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.22 24 12 24z"/>
-                    <path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.99 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/>
-                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.22 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/>
-                </svg>
-            </div>
-            <span>Google</span>
+            <div class="logo-box"><img src="google.png" alt="Google"></div>
+        </a>
+        <a class="card" href="https://lidraughts.org" target="_blank">
+            <div class="logo-box"><img src="lidraughts.jpg" alt="Lidraughts"></div>
+        </a>
+        <a class="card" href="https://vaison-echecs.fr" target="_blank">
+            <div class="logo-box"><img src="site club.jpg" alt="Vaison Échecs"></div>
+        </a>
+        <a class="card" href="https://jstris.jezevec10.com/?mode=1" target="_blank">
+            <div class="logo-box"><img src="tetris.png" alt="Tetris"></div>
         </a>
     </div>
 
